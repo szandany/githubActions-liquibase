@@ -3,38 +3,39 @@
 name: Liquibase_CLI_GitHub-Hosted
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
+# events but only for the master branch
 on:
   workflow_dispatch:
 #   push:
-#     branches: [ main ]
+#     branches: [ master ]
 #   pull_request:
-#     branches: [ main ]
+#     branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  LBJob:
+
+  LBJobCLI:
+    #needs: LBJobMaven
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: RunLiquibaseCommands
+      
+      - name: RunLiquibaseCLICommands
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v2
-
+      
       # Runs a set of commands using the runners shell
 
       - run: |
-          echo "Running Liquibase commands"
           ./liquibase/liquibase --version
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties updateSQL
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
-          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git add .; git commit -m "saving changes"; git push -u origin main
+          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin master
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3 | grep -v Hub
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
-          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git add .; git commit -m "saving changes"; git push -u origin main
+          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin master
