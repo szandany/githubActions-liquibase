@@ -3,13 +3,13 @@
 name: Liquibase_CLI_GitHub-Hosted
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the main branch
 on:
   workflow_dispatch:
 #   push:
-#     branches: [ master ]
+#     branches: [ main ]
 #   pull_request:
-#     branches: [ master ]
+#     branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -33,9 +33,9 @@ jobs:
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties updateSQL
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
-          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin master
+          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin main
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3 | grep -v Hub
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
-          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin master
+          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin main
