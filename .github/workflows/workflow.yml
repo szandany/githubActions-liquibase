@@ -34,7 +34,7 @@ jobs:
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
           git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git add .; git commit -m "saving changes"; git push -u origin master
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
-          ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
+          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3 | grep -v Hub
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git add .; git commit -m "saving changes"; git push -u origin master
