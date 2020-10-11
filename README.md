@@ -14,6 +14,6 @@ This is a repository that contains Liquibase projects (H2 Database) with Github 
 All workflows are set to be running on a Ubuntu-latest VM Github hosted runner.
 
 # Adjustments
-You can adjust your workflow by going to the workflow script in githubActions-liquibase/.github/workflows/<workflow name>.yaml
+You can adjust your workflow by going to the workflow script in githubActions-liquibase/.github/workflows/&lt;workflow name&gt;.yaml
   
  
