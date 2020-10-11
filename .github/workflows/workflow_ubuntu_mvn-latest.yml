@@ -3,13 +3,13 @@
 name: Liquibase_Maven_GitHub-Hosted
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the main branch
 on:
   workflow_dispatch:
 #   push:
-#     branches: [ master ]
+#     branches: [ main ]
 #   pull_request:
-#     branches: [ master ]
+#     branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,6 +27,6 @@ jobs:
           cd SalesManager_h2_version
           mvn -version
           mvn clean package
-          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin master
+          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin main
           mvn liquibase:status -Dliquibase.verbose
           mvn liquibase:update
