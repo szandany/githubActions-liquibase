@@ -32,12 +32,12 @@ jobs:
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties updateSQL
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
-          $SAVE_CHANGES
+          ${SAVE_CHANGES}
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
-          $SAVE_CHANGES
+          ${SAVE_CHANGES}
           
         env:
             SAVE_CHANGES:
