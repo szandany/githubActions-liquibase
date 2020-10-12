@@ -32,13 +32,15 @@ jobs:
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties updateSQL
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
-          ${SAVE_CHANGES}
+          git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin main
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
-          ${SAVE_CHANGES}
+          git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $message; git push -u origin $branch
           
         env:
-            SAVE_CHANGES:
-              git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin main  
+            user.email: "szandany@liquibase.com"
+            user.name: "szandany"
+            message: "saving changes"
+            branch: "main"
