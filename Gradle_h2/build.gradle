@@ -52,7 +52,7 @@ task('createSnapshot') {
 	        outputFile "src/main/snapshot.json"
 	        snapshotFormat "json"
     		}
-    	}
+     }
     }
   }
 }
