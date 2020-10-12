@@ -39,6 +39,7 @@ jobs:
         #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
     
   LBJobSaveChanges:
+    needs: LBJobDockerCLI
     runs-on: ubuntu-latest
     steps:    
     - uses: actions/checkout@v2
