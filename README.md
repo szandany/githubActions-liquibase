@@ -6,7 +6,7 @@ This is a repository that contains Liquibase projects (H2 Database) with Github 
 3. Liquibase Gradle commands
 
 # Usage
-1. Fork this repository so you can have your own copy.
+1. Fork this repository so you can have your own copy. https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo
 2. Under the "workflow" section, go to the "Actions" tab and pick the any workflow mentioned above.
 3. Click "run workflow".
 
