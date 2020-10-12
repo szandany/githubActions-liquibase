@@ -4,6 +4,7 @@ This is a repository that contains Liquibase projects (H2 Database) with Github 
 1. Liquibase Command Line Interface (CLI). 
 2. Liquibase Maven commands with a Springboot app
 3. Liquibase Gradle commands
+4. Liquibase running in Docker
 
 # Usage
 1. Fork this repository so you can have your own copy. https://guides.github.com/activities/forking/
