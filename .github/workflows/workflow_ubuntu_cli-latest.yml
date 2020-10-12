@@ -33,7 +33,7 @@ jobs:
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties updateSQL
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
           
-          # Uncomment the line below to save changes.  Also, see environment variables under "env" assign variables accordingly
+          # Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
           #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
           
           #Uncomment the line below to generate a change log.
@@ -43,7 +43,7 @@ jobs:
           #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3
           #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           
-          #Uncomment the line below to save changes.  Also, see environment variables under "env" assign variables accordingly
+          #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
           #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
           
         env:
