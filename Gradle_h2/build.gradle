@@ -27,7 +27,7 @@ liquibase {
     main {
       //common parameters
       //liquibaseProLicenseKey System.properties.liquibaseLicenseKey
-	  	changeLogFile "../H2_project/changeLog.h2.sql"
+	  	changeLogFile "changeLog.h2.sql"
       //url System.properties.liquibaseDBUrl
 	  	url "jdbc:h2:mem:liquibase"
 			username "liquibase"
