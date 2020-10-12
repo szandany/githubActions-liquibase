@@ -34,10 +34,10 @@ jobs:
         
 
         #The Liquibase commands above are running in-memory H2 database.  To run a and save a local copy of a H2 database, do the following:
-        #1. --url=jdbc:h2:file:./Docker/h2tutorial
-        #2. Save the files in the repo like this
+        #1. change the url flag to point to a local copy of the H2 database: --url=jdbc:h2:file:./Docker/h2tutorial
+        #2. Save the files in the repo like the following:
         #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
-        #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
+        git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
       env:
         user.email: "szandany@liquibase.com"
         user.name: "szandany"
