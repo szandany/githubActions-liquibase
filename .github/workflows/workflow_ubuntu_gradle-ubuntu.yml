@@ -29,5 +29,4 @@ jobs:
           gradle build
           gradle updateSQL
           gradle update
-          #git config --global user.email "szandany@liquibase.com"; git config --global user.name "szandany"; git config pull.rebase false; git add .; git commit -m "saving changes"; git push -u origin master
           
