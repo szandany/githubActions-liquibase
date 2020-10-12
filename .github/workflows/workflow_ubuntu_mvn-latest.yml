@@ -27,13 +27,14 @@ jobs:
           cd SalesManager_h2_version
           mvn -version
           mvn clean package
-          git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
+          #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
+          #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
           mvn liquibase:status -Dliquibase.verbose
           mvn liquibase:update
 
           
         env:
-            user.email: "szandany@liquibase.com"
-            user.name: "szandany"
-            message: "saving changes"
-            branch: "main"
+            user.email: "<email>"
+            user.name: "<user name>"
+            message: "<commit message>"
+            branch: "<branch name>"
