@@ -37,6 +37,10 @@ jobs:
         #1. change the url flag to point to a local copy of the H2 database: --url=jdbc:h2:file:./Docker/h2tutorial
         #2. Save the files in the repo like the following:
         #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
+    
+  LBJobSaveChanges:
+    runs-on: ubuntu-latest
+    steps:    
     - uses: actions/checkout@v2
     - name: Checkout
       run: git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
