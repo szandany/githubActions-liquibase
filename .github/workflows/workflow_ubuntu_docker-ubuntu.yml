@@ -16,7 +16,7 @@ jobs:
   LBJobDockerCLI:
     runs-on: ubuntu-latest
     container:
-      image: liquibase/liquibase:3.10.x
+      image: liquibase/liquibase
     steps: 
     # Runs a set of commands using the runners shell 
     - uses: actions/checkout@v2
@@ -26,7 +26,18 @@ jobs:
       run: java -version
     - name: Run Liquibase commands
       run: |
-        liquibase/liquibase --version
+        liquibase/liquibase --version 
         liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password status --verbose
         liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password updateSQL
         liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password update
+
+        #The Liquibase commands above are running in-memory H2 database.  To run a and save a local copy of a H2 database, do the following:
+        #1. --url=jdbc:h2:file:./H2_project/h2tutorial
+        #2. Save the files in the repo like this
+        #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
+        #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
+      #env:
+        #user.email: "<email>"
+        #user.name: "<username>"
+            #message: "<enter commit message>"
+            #branch: "<git branch name>"
