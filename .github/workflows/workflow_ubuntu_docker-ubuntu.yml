@@ -24,10 +24,6 @@ jobs:
       run: uname -a
     - name: What java version do we have
       run: java -version
-    - name: Get version of Liquibase
-      run: |
-        curl -L https://github.com/liquibase/liquibase/releases/download/v4.1.1/liquibase-4.1.1.zip --output liquibase-4.1.1.zip
-        unzip -o -d liquibase liquibase-4.1.1.zip
     - name: Run Liquibase commands
       run: |
         liquibase/liquibase --version 
