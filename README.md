@@ -19,7 +19,6 @@ All workflows are set to be running on a Ubuntu-latest VM Github hosted runner.
 2. You can add more commands and flags to the workflow script
 3. For each of the projects, you will find its corresponding files in this repository.  
 For example: <br />
- - For Liquibase software - liquibase folder containing the liquibase software files.<br />
  - For Liquibase CLI commands - H2_project folder containing files like "liquibase.properties" and a changeLog file.<br />
  - For Gradle - Gradle_h2 folder containing files like "build.gradle".<br />
  - For Maven - SalesManager_h2_version folder containing files like "pom.xml" and "application.properties" springboot class java files.<br />
