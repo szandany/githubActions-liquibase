@@ -6,6 +6,7 @@ name: Liquibase_CLI_GitHub-Hosted
 # events but only for the main branch
 on:
   workflow_dispatch:
+   types: [my-event]
 #   push:
 #     branches: [ main ]
 #   pull_request:
