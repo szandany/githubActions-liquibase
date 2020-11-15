@@ -6,7 +6,13 @@ name: Liquibase_CLI_GitHub-Hosted
 # events but only for the main branch
 on:
   workflow_dispatch:
-   types: [my-event]
+   inputs:
+      logLevel:
+        description: 'Log level'     
+        required: false
+        default: 'info'
+      tags:
+        description: 'Test scenario tags'
 #   push:
 #     branches: [ main ]
 #   pull_request:
@@ -35,8 +41,6 @@ jobs:
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties updateSQL
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties update
-          
-          echo ${{ github.event.client_payload.var }}
           
           # Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
           #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
