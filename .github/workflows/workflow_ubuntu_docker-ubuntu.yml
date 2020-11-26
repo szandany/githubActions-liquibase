@@ -26,7 +26,8 @@ jobs:
       run: java -version
     - name: Run Liquibase commands
       run: |
-        liquibase/liquibase --version 
-        liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password status --verbose
-        liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password updateSQL
-        liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password update
+        docker run --rm -v "${cwd}"/Docker:/liquibase/changelog liquibase/liquibase:latest --url="jdbc:h2:mem:liquibase_dev --changeLogFile=./Docker/changeLog.h2.sql --username=admin --password=password --logLevel=debug update
+        #liquibase/liquibase --version 
+        #liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password status --verbose
+        #liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password updateSQL
+        #liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password update
