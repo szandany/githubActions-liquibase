@@ -19,7 +19,7 @@ jobs:
       image: liquibase/liquibase
     steps: 
     # Runs a set of commands using the runners shell 
-    - uses: actions/checkout@v2
+    #- uses: actions/checkout@v2
     - name: What OS is running
       run: uname -a
     - name: What java version do we have
