@@ -15,11 +15,13 @@ on:
 jobs:
   LBJobDockerCLI:
     runs-on: ubuntu-latest
-    container:
-      image: liquibase/liquibase
+    #container:
+    #  image: liquibase/liquibase
     steps: 
     # Runs a set of commands using the runners shell 
-    #- uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+    - name: Run box version	    
+      uses: docker://liquibase/liquibase:latest
     - name: What OS is running
       run: uname -a
     - name: What java version do we have
