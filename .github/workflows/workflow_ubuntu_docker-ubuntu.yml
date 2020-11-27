@@ -1,9 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Liquibase_Docker_GitHub-Hosted
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   workflow_dispatch:
    push:
@@ -15,18 +11,16 @@ on:
 jobs:
   LBJobDockerCLI:
     runs-on: ubuntu-latest
-    #container:
-    #  image: liquibase/liquibase
     steps: 
-    # Runs a set of commands using the runners shell 
     - uses: actions/checkout@v2
-    - name: Run Liquibase in a Docker Container	    
+    
+    - name: Run 'Liquibase status' in a Docker Container	    
       uses: docker://liquibase/liquibase:latest
       with:
-        #entrypoint: /opt/box/box
         args: --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=./Docker/changeLog.h2.sql --username=admin --password=password status --verbose
-    - name: Run Liquibase in a Docker Container
-      uses: docker://liquibase/liquibase:4.1
+    
+    - name: Run 'Liquibase update' in a Docker Container
+      uses: docker://liquibase/liquibase:latest
       with:
         args: --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=./Docker/changeLog.h2.sql --username=admin --password=password --logLevel=debug update
 
