@@ -37,12 +37,14 @@ jobs:
       - run: |
           curl -L https://github.com/liquibase/liquibase/releases/download/v4.2.0/liquibase-4.2.0.zip --output liquibase-4.2.0.zip
           unzip -o -d liquibase liquibase-4.2.0.zip
-          ./liquibase/liquibase --version
-          ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" status --verbose
-          ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" updateSQL
-          ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" update
+          node NodeJS/index.js
           
-          echo "Tags: ${{ github.event.inputs.tags }}" 
+          #./liquibase/liquibase --version
+          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" status --verbose
+          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" updateSQL
+          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" update
+          
+          #echo "Tags: ${{ github.event.inputs.tags }}" 
           
           # Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
           #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
