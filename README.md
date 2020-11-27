@@ -24,4 +24,4 @@ For example: <br />
  - For Gradle - Gradle_h2 folder containing files like "build.gradle".<br />
  - For Maven - SalesManager_h2_version folder containing files like "pom.xml" and "application.properties" springboot class java files.<br />
  - For Docker - Docker folder containing files like a changeLog file.
- - For NodeJS - NodeJS folder containing files like index.js and other pipeline liquibase_<environment>.js files.
+ - For NodeJS - NodeJS folder containing files like index.js and other pipeline liquibase_&lt;environment&gt;.js files.
