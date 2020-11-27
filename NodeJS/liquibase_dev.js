@@ -4,7 +4,7 @@ const config = {
   url: "jdbc:h2:mem:liquibase_dev",
   contexts: 'DEV',
   labels: 'staging,Jira-1200',
-  logLevel: 'debug',
+  logLevel: 'info',
   // overwriteOutputFile: 'true',
   // logFile: 'dev.log'
 };
