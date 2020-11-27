@@ -22,6 +22,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run box version	    
       uses: docker://liquibase/liquibase:latest
+      with:
+        #entrypoint: /opt/box/box
+        args: --version
     - name: What OS is running
       run: uname -a
     - name: What java version do we have
