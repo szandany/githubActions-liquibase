@@ -37,6 +37,7 @@ jobs:
       - run: |
           curl -L https://github.com/liquibase/liquibase/releases/download/v4.2.0/liquibase-4.2.0.zip --output liquibase-4.2.0.zip
           unzip -o -d liquibase liquibase-4.2.0.zip
+          node --version
           node NodeJS/index.js
           
           #./liquibase/liquibase --version
