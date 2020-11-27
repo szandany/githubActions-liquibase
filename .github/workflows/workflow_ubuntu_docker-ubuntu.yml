@@ -24,7 +24,7 @@ jobs:
       uses: docker://liquibase/liquibase:latest
       with:
         #entrypoint: /opt/box/box
-        args: --version
+        args: --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=./Docker/changeLog.h2.sql --username=admin --password=password status --verbose
     - name: What OS is running
       run: uname -a
     - name: What java version do we have
