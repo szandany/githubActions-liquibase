@@ -5,6 +5,7 @@ This is a repository that contains Liquibase projects (H2 Database) with Github 
 2. Liquibase Maven commands with a Springboot app
 3. Liquibase Gradle commands
 4. Liquibase running in Docker
+5. Liquibase running in a NodeJS Wrapper
 
 # Usage
 1. Fork this repository so you can have your own copy. https://guides.github.com/activities/forking/
@@ -22,4 +23,5 @@ For example: <br />
  - For Liquibase CLI commands - H2_project folder containing files like "liquibase.properties" and a changeLog file.<br />
  - For Gradle - Gradle_h2 folder containing files like "build.gradle".<br />
  - For Maven - SalesManager_h2_version folder containing files like "pom.xml" and "application.properties" springboot class java files.<br />
- - For Docker - Docker folder containing files like a changeLog file. 
+ - For Docker - Docker folder containing files like a changeLog file.
+ - For NodeJS - NodeJS folder containing files like index.js and other pipeline liquibase_<environment>.js files.
