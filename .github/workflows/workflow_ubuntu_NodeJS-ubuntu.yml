@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
    inputs:
       environment:
-        description: 'environment'     
+        description: 'environment = dev | test | prod'     
         required: false
         default: 'dev'
       tags:
@@ -39,29 +39,3 @@ jobs:
           unzip -o -d liquibase liquibase-4.2.0.zip
           node --version
           node NodeJS/liquibase_"${{ github.event.inputs.environment }}".js
-          
-          #./liquibase/liquibase --version
-          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" status --verbose
-          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" updateSQL
-          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" update
-          
-          #echo "Tags: ${{ github.event.inputs.tags }}" 
-          
-          # Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
-          #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
-          
-          #Uncomment the line below to generate a change log.
-          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --changeLogFile=./H2_project/newChangeLog.h2.sql generateChangeLog
-          
-          #Uncomment the line below to run the rollbackCount 3 times
-          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties rollbackCount 3
-          #./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties status --verbose
-          
-          #Uncomment the line below to save changes.  Also, see environment variables under "env" and assign variables accordingly
-          #git config --global user.email $user.email; git config --global user.name $user.name; git config pull.rebase false; git add .; git commit -m $"message"; git push -u origin $branch
-          
-        env:
-            user.email: "<email>"
-            user.name: "<username>"
-            message: "<enter commit message>"
-            branch: "<git branch name>"
