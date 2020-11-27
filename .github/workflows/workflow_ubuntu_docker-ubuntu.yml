@@ -20,19 +20,15 @@ jobs:
     steps: 
     # Runs a set of commands using the runners shell 
     - uses: actions/checkout@v2
-    - name: Run box version	    
+    - name: Run Liquibase in a Docker Container	    
       uses: docker://liquibase/liquibase:latest
       with:
         #entrypoint: /opt/box/box
         args: --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=./Docker/changeLog.h2.sql --username=admin --password=password status --verbose
-    - name: What OS is running
-      run: uname -a
-    - name: What java version do we have
-      run: java -version
-    - name: Run Liquibase commands
-      run: |
-        ls -a
-        #liquibase/liquibase --version 
-        #liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password status --verbose
-        #liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password updateSQL
-        #liquibase/liquibase --url="jdbc:h2:mem:liquibase" --changeLogFile=./Docker/changeLog.h2.sql --username=liquibase --password=password update
+    - name: Run Liquibase in a Docker Container
+      uses: docker://liquibase/liquibase:4.1
+      with:
+        args: --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=./Docker/changeLog.h2.sql --username=admin --password=password --logLevel=debug update
+
+        
+        
