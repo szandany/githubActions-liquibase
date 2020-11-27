@@ -10,7 +10,7 @@ class Liquibase {
   constructor(params = {}) {
     const defaultParams = {
       liquibase: './liquibase/liquibase',
-      changeLogFile: './H2_project/newChangeLog.h2.sql',
+      changeLogFile: './H2_project/changeLog.h2.sql',
       username: 'admin',
       password: 'password',
       // liquibaseProLicenseKey: '<paste liquibase-pro-license-key here>'
