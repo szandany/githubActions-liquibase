@@ -9,7 +9,7 @@ on:
    inputs:
       environment:
         description: 'Please choose an environment'     
-        required: false
+        required: true
         options: ['prod', 'test', 'dev']
         default: 'dev'
       tags:
