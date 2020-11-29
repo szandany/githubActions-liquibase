@@ -8,8 +8,9 @@ on:
   workflow_dispatch:
    inputs:
       environment:
-        description: 'environment = dev | test | prod'     
+        description: 'Please choose an environment'     
         required: false
+        options: ['prod', 'test', 'dev']
         default: 'dev'
       tags:
         description: 'Test scenario tags'
