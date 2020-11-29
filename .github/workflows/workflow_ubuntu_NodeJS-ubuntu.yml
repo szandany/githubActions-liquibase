@@ -8,12 +8,15 @@ on:
   workflow_dispatch:
    inputs:
       environment:
-        description: 'Please choose an environment'     
+        description: 'Please choose an environment: dev | test | prod'     
         required: true
         options: ['dev', 'test', 'prod']
-        #default: 'dev'
+        default: 'dev'
       tags:
         description: 'Test scenario tags'
+   outputs:
+      time:
+        description: 'The time we greeted you'
 #   push:
 #     branches: [ main ]
 #   pull_request:
