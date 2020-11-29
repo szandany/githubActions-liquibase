@@ -11,7 +11,7 @@ on:
         description: 'Please choose an environment'     
         required: true
         options: ['dev', 'test', 'prod']
-        default: 'dev'
+        #default: 'dev'
       tags:
         description: 'Test scenario tags'
 #   push:
