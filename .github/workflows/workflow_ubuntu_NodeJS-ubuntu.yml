@@ -10,7 +10,7 @@ on:
       environment:
         description: 'Please choose an environment'     
         required: true
-        options: ['prod', 'test', 'dev']
+        options: ['dev', 'test', 'prod']
         default: 'dev'
       tags:
         description: 'Test scenario tags'
