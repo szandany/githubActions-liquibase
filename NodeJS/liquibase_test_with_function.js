@@ -91,7 +91,7 @@ module.exports.update_database_and_rollback = function () {
   })
   .catch((err) => console.error('fail', err));
 }
-// You can run each function individually: node -e 'require("./liquibase_test_with_function.js").review_SQL_and_update()'
+// You can run each function individually: node -e 'require("./liquibase_test_with_function.js").update_database_and_rollback()'
 
 module.exports.review_SQL_and_update = function () {
   liquibase(config)
