@@ -1,3 +1,5 @@
+// Great when using the Observer Pattern with the EventEmitter class from the 'events' module.
+
 const liquibase = require("./index");
 
 const config = {
