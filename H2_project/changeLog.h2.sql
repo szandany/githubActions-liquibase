@@ -4,7 +4,7 @@
 CREATE TABLE SALES (ID BIGINT AUTO_INCREMENT, ITEM VARCHAR(255), QUANTITY NUMBER, AMOUNT FLOAT, CONSTRAINT SALES_PK PRIMARY KEY (ID));
 --rollback DROP TABLE SALES;
 
---changeset SteveZ:1582471835439-2 context:DEV labels:Jira-118,beta
+--changeset SteveZ:1582471835439-2 context:DEV labels:Jira-118,beta runOrder:last
 INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Leather sofa By Michellotti', 4, 5026.63);
 --rollback DELETE FROM SALES WHERE ITEM='Leather sofa By Michellotti';
 
