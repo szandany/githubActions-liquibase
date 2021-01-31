@@ -35,8 +35,8 @@ jobs:
       # Runs a set of commands using the runners shell
 
       - run: |
-          curl -L https://github.com/liquibase/liquibase/releases/download/v4.2.2/liquibase-4.2.2.zip --output liquibase-4.2.2.zip
-          unzip -o -d liquibase liquibase-4.2.2.zip
+          curl -L https://github.com/liquibase/liquibase/releases/download/v${LB_VERSION}/liquibase-${LB_VERSION}.zip --output liquibase-${LB_VERSION}.zip
+          unzip -o -d liquibase liquibase-${LB_VERSION}.zip
           ./liquibase/liquibase --version
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" status --verbose
           ./liquibase/liquibase --defaultsFile=./H2_project/liquibase.properties --logLevel="${{ github.event.inputs.logLevel }}" updateSQL
@@ -62,3 +62,4 @@ jobs:
             user.name: "<username>"
             message: "<enter commit message>"
             branch: "<git branch name>"
+            LB_VERSION: "4.2.2"
