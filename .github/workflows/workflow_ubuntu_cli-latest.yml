@@ -13,6 +13,11 @@ on:
         default: 'severe'
       tags:
         description: 'Test scenario tags'
+      Pro License Key:
+        description: 'To get a free 30 day pro license key: https://www.liquibase.org/try-liquibase-pro-free'
+      Hub API Key:
+        description: 'Hub is free for all users & teams! Sign up now: https://www.liquibase.com/products/pro'
+      
 #   push:
 #     branches: [ main ]
 #   pull_request:
