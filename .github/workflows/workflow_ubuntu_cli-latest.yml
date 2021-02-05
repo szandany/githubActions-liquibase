@@ -14,9 +14,9 @@ on:
       tags:
         description: 'Test scenario tags'
       liquibaseProLicenseKey:
-        description: '**Enter Pro License key below**                 Get a free 30 day pro license key https://www.liquibase.org/try-liquibase-pro-free'
+        description: '**Enter Pro License key below**                 Get a free 30 day pro license key https://www.liquibase.com/trial'
       liquibaseHubApiKey:
-        description: '**Enter Hub API key below**                     Hub is free for all users & teams! Sign up now: https://www.liquibase.com/products/pro'
+        description: '**Enter Hub API key below**                     Hub is free for all users & teams! Sign up now: https://hub.liquibase.com'
       
 #   push:
 #     branches: [ main ]
