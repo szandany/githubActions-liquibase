@@ -9,5 +9,5 @@ INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Leather sofa By Michellotti'
 --rollback DELETE FROM SALES WHERE ITEM='Leather sofa By Michellotti';
 
 --changeset Dion:1582471835439-3 context:"PROD and PREPROD" labels:Jira-118,pro
-INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Round coffee table By Michellotti', 1, 800.23);
+INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Round coffee table By Michellotti', 2, 800.23);
 --rollback DELETE FROM SALES WHERE ITEM='Round coffee table By Michellotti';
