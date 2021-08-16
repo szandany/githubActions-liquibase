@@ -67,4 +67,4 @@ jobs:
             user.name: "<username>"
             message: "<enter commit message>"
             branch: "<git branch name>"
-            LB_VERSION: "4.2.2"
+            LB_VERSION: "4.4.3"
