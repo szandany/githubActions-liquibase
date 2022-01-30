@@ -12,6 +12,7 @@ dependencies {
   liquibaseRuntime 'edu.umich.med.michr:h2-gradle-plugin:1.0.1'
   liquibaseRuntime 'org.postgresql:postgresql:42.2.10'
   liquibaseRuntime 'org.yaml:snakeyaml:1.26'
+  liquibaseRuntime 'com.h2database:h2'
 }
 apply plugin: "org.liquibase.gradle"
 
