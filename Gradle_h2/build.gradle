@@ -7,9 +7,9 @@ repositories {
   }
 }
 dependencies {
-  liquibaseRuntime 'org.liquibase:liquibase-core:3.10.2'
+  liquibaseRuntime 'org.liquibase:liquibase-core:4.6.1'
   liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:2.1.1'
-	liquibaseRuntime 'edu.umich.med.michr:h2-gradle-plugin:0.1.1-SNAPSHOT'
+  liquibaseRuntime 'edu.umich.med.michr:h2-gradle-plugin:0.1.1-SNAPSHOT'
   liquibaseRuntime 'org.postgresql:postgresql:42.2.10'
   liquibaseRuntime 'org.yaml:snakeyaml:1.26'
 }
@@ -18,19 +18,19 @@ apply plugin: "org.liquibase.gradle"
 liquibase {
   activities {
     main {
-      //common parameters
-      //liquibaseProLicenseKey System.properties.liquibaseLicenseKey
-	  	changeLogFile "changeLog.h2.sql"
-      //url System.properties.liquibaseDBUrl
-	  	url "jdbc:h2:mem:liquibase"
-			username "liquibase"
-			password "password"
-      // username System.properties.liquibaseUsername
-      // password System.properties.liquibasePassword
-      //includeObjects "table:.*"
-			referenceUrl "jdbc:h2:mem:liquibase"
-			referenceUsername "liquibase"
-			referencePassword "password"
+      	//common parameters
+	changeLogFile "changeLog.h2.sql"
+	url "jdbc:h2:mem:liquibase"
+	username "liquibase"
+	password "password"
+	referenceUrl "jdbc:h2:mem:liquibase"
+	referenceUsername "liquibase"
+	referencePassword "password"
+	//url System.properties.liquibaseDBUrl
+	//liquibaseProLicenseKey System.properties.liquibaseLicenseKey
+      	//username System.properties.liquibaseUsername
+      	//password System.properties.liquibasePassword
+      	//includeObjects "table:.*"
       //logLevel "debug"
     }
   }
@@ -40,13 +40,13 @@ liquibase {
 task('createSnapshot') {
   doFirst(){
     liquibase {
-			activities {
-			  main {
-	        outputFile "src/main/snapshot.json"
+    	activities {
+	main {
+		outputFile "src/main/snapshot.json"
 	        snapshotFormat "json"
-    		}
      }
     }
+   }
   }
 }
 snapshot.dependsOn(createSnapshot)
@@ -54,19 +54,19 @@ snapshot.dependsOn(createSnapshot)
 task('reviewSQL') {
   doFirst(){
     liquibase {
-			activities {
-			  main {
-				  //changeLogFile "src/main/changelog-master.json"
-					//url System.properties.liquibaseDBUrl
-		      // username System.properties.liquibaseUsername
-		      // password System.properties.liquibasePassword
-				  //url "jdbc:postgresql://localhost:5432/goku"
-					//username "postgres"
-					//password "password"
-    		}
-    	}
+	activities {
+		main {
+			//changeLogFile "src/main/changelog-master.json"
+			//url System.properties.liquibaseDBUrl
+		        // username System.properties.liquibaseUsername
+		        // password System.properties.liquibasePassword
+			//url "jdbc:postgresql://localhost:5432/goku"
+			//username "postgres"
+			//password "password"
     }
+   }
   }
+ }
 }
 updateSQL.dependsOn(reviewSQL)
 
@@ -75,12 +75,12 @@ task('deploy') {
     liquibase {
 			activities {
 			  main {
-				  //url System.properties.liquibaseDBUrl
-		      // username System.properties.liquibaseUsername
-		      // password System.properties.liquibasePassword
-    		}
-    	}
+		      		//url System.properties.liquibaseDBUrl
+		      		// username System.properties.liquibaseUsername
+		      		// password System.properties.liquibasePassword
     }
+   }
   }
+ }
 }
 update.dependsOn(deploy)
